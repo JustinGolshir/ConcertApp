@@ -12,6 +12,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body id="top">
@@ -54,7 +55,7 @@
                   </div>
                   <div class="input-field">
                     <input id="search-box" type="search" placeholder="Type Any Artist or Band Name to get started" required>
-                    <button id="search-button">
+                    <button id="search-button" type="submit">
                       <i class="material-icons">search</i>
                     </button>
                   </div>
@@ -71,63 +72,57 @@
 
   <!-- main section -->
   <div id="main-info-header">
-     <h2 class="h1 pt-5 pb-3 text-center"> The latest news on:</h2>
+    <!-- <h2 class="h1 pt-5 pb-3 text-center"> Upcoming Events for:</h2> -->
   </div>
- 
+  <!-- google maps div -->
+  <div id="upcomingEventsDiv"></div>
   <div class="container" id="main-container">
     <div class="row">
       <div class="col-md-6">
-          <div class="row">
-              <div class="col s12 m7">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="img/architecture.jpg">
-                    <span class="card-title" id="artist-name"><h2>Artist Name</h2></span>
-                  </div>
-                  <h3>Tour Dates</h3>
-                    <div>
-                        <table id="artist-table">
-                            <thead id="table-head">
-                               <tr id="table-row">
-                                  <th>Student</th>
-                                  <th>Class</th>
-                                  <th>Grade</th>
-                               </tr>
-                            </thead>
-                            
-                            <tbody>
-                               <tr>
-                                  <td>Mahesh Parashar</td>
-                                  <td>VI</td>
-                                  <td>A</td>
-                               </tr>
-                               
-                               <tr>
-                                  <td>Rahul Sharma</td>
-                                  <td>VI</td>
-                                  <td>B</td>
-                               </tr>
-                               
-                               <tr>
-                                  <td>Mohan Sood</td>
-                                  <td>VI</td>
-                                  <td>A</td>
-                               </tr>
-                            </tbody>
-                         </table>
+        <div class="row">
+          <div class="col s12 m7">
+            <div class="card">
+              <div class="card-image">
+                <span class="card-title">
+                </span>
+              </div>
+              <h3>Tour Dates</h3>
+              <div>
+                <table id="artist-table" class="table">
+                  <thead id="table-head">
+                    <tr class="table-row">
+                      <th>Date</th>
+                      <th>City, State</th>
+                      <th>Venue</th>
+                      <th>Buy Tickets</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="table-body">
+                    <div class="table-row">
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
                     </div>
-                </div>
+
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-        </div>
-        <div class="col-md-6">
-          <h1>google maps will go here</h1>
+          </div>
         </div>
       </div>
+      <div class="col-md-6" id="map-div">
+      </div>
     </div>
+  </div>
 
-
-    <!-- <section class="py-5" id="team">
+  <div id="event-div"></div>
+  <!-- <section class="py-5" id="team">
   <div class="container">
     <div class="wow fadeIn">
       <h2 class="h1 pt-5 pb-3 text-center">Our team members</h2>
@@ -240,9 +235,9 @@
       </div>
     </div>
   </div> -->
-    </section>
-  </div>
-  <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
+  <!-- </section>
+  </div> -->
+  <!-- <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -271,11 +266,14 @@
         </p>
       </div>
     </div>
-  </footer>
-  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  </footer> -->
+
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/mdb.min.js"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL1pWue1-8N5rlNWW2anG7vEvNgHg2UNc&callback=initMap"></script>
+  <script type="text/javascript" src="../our-javascript/app.js"></script>
   <script>new WOW().init();</script>
 </body>
 
