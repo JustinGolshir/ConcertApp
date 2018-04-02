@@ -5,14 +5,18 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Material Landing</title>
+  <title>Concert Connection</title>
   <meta name="description" content="Material design landing page template built by TemplateFlip.com" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
   <link href="styles/main.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/locale/af.js"></script> -->
+
+
 </head>
 
 <body id="top">
@@ -31,7 +35,9 @@
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#about">About</a>
+              <a class="nav-link active" href="#intro">Home</a>
+            </li><li class="nav-item">
+              <a class="nav-link active" href="#team">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
@@ -50,14 +56,16 @@
                   <div class="wow fadeInLeft" data-wow-delay="0.3s">
                     <h1 class="h1-responsive font-bold mt-sm-5">Welcome to Concert Connection</h1>
                     <div class="h6" style="margin-bottom: 150px">
-                      Concert Connection is your one stop shop to find a concert, purchase tickets and get directions to the venue.
+                      One stop shop for all your concert-going needs.
                     </div>
                   </div>
                   <div class="input-field">
-                    <input id="search-box" type="search" placeholder="Type Any Artist or Band Name to get started" required>
-                    <button id="search-button" type="submit">
+                    <form>
+                    <input id="search-box" type="search" required>
+                    <button id="search-button" type="submit">  
                       <i class="material-icons">search</i>
                     </button>
+                  </form>
                   </div>
                   <div class="h6">
                   </div>
@@ -70,59 +78,41 @@
     </section>
   </header>
 
-  <!-- main section -->
-  <div id="main-info-header">
-    <!-- <h2 class="h1 pt-5 pb-3 text-center"> Upcoming Events for:</h2> -->
-  </div>
-  <!-- google maps div -->
-  <div id="upcomingEventsDiv"></div>
-  <div class="container" id="main-container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col s12 m7">
-            <div class="card">
-              <div class="card-image">
-                <span class="card-title">
-                </span>
-              </div>
-              <h3>Tour Dates</h3>
-              <div>
-                <table id="artist-table" class="table">
-                  <thead id="table-head">
-                    <tr class="table-row">
-                      <th>Date</th>
-                      <th>City, State</th>
-                      <th>Venue</th>
-                      <th>Buy Tickets</th>
-                    </tr>
-                  </thead>
+  
+  <div id=“artist-table-div”>
+      
+    <table id=“artist-table”>
+        <tr id=“artist-name”></tr>
+        <thead id=“table-head”>
+           <tr id=“table-row”></tr>
+              <th class=“table-header-item”>Date</th>
+              <th class=“table-header-item”>Venue</th>
+              <th class=“table-header-item”>Location</th>
+              <th class=“table-header-item”>Tickets</th>
+              <th class=“table-header-item”>Map It!</th>
+           </tr>
+        </thead>
+        
+        <!-- <tbody id=“table-body”>
+         
+        </tbody> -->
+     </table>
+</div>
 
-                  <tbody id="table-body">
-                    <div class="table-row">
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </div>
+<div class="col-md-12" id="artist-div">
+</div>
 
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6" id="map-div">
-      </div>
-    </div>
-  </div>
+<div class="col-md-4" id="map-div">
+</div>
 
-  <div id="event-div"></div>
-  <!-- <section class="py-5" id="team">
+
+
+
+  
+  
+
+  
+   <section class="py-5" id="team">
   <div class="container">
     <div class="wow fadeIn">
       <h2 class="h1 pt-5 pb-3 text-center">Our team members</h2>
@@ -235,9 +225,9 @@
       </div>
     </div>
   </div> -->
-  <!-- </section>
+  </section>
   </div> -->
-  <!-- <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
+  <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -258,7 +248,7 @@
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
+<div class="footer-copyright">
       <div class="container-fluid">
         <p>&copy;
           <a href="/">Material Landing</a> - Design:
@@ -266,12 +256,19 @@
         </p>
       </div>
     </div>
-  </footer> -->
+  </footer> 
 
+
+
+
+
+
+  <!--Link to Moment.js should go here --> 
+
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/mdb.min.js"></script>
-
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL1pWue1-8N5rlNWW2anG7vEvNgHg2UNc&callback=initMap"></script>
   <script type="text/javascript" src="../our-javascript/app.js"></script>
   <script>new WOW().init();</script>
