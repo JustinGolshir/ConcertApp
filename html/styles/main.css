@@ -119,3 +119,21 @@ img {
   height: 200px;
 }
 
+
+/* footer */
+
+#footer-div{
+  background-color: black;
+}
+
+
+/* about page */
+
+.navbar:not(.top-nav-collapse)
+{
+  background: black !important;
+}
+
+.full-height header {
+  height: 25px;
+}
