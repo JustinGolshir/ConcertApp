@@ -16,7 +16,10 @@ var eventLongit;
 var eventLat;
 var ticketURL;
 var mapBut;
-var ticketBut; 
+var ticketBut;
+
+var geolocation;
+var map;
 
 // $( document ).ready(function() {
 //     console.log( "ready!" );
@@ -33,9 +36,9 @@ function searchBandsInTown(artist) {
         method: "GET"
     }).then(function (response) {
 
-   
+
         // Printing the entire object to console
-        console.log(response);
+        //console.log(response);
 
         // Constructing HTML containing the artist information
         var artistName = $("<h3>").text(response.name);
@@ -50,7 +53,7 @@ function searchBandsInTown(artist) {
         // $("#artist-div").append(artistImage); 
         // $("#artist-div").append(artistName);
         // $("#artist-div").append(upcomingEvents);
-         
+
     });
 }
 
@@ -69,43 +72,37 @@ function showArtistEvents(artist) {
         //     method: "GET"
         //   }).then(function(response) {
         //     $("#artist-div").text(JSON.stringify(response));
-          
 
-        console.log(response)
+
+        //console.log(response)
 
         response.forEach(function (eventData) {
 
-            
+
             var newDate = moment(eventData.datetime).format('lll');
             console.log(newDate)
             var ticketURL = eventData.offers[0].url;
 
 
-               //Append event data to table
-        
-           
-                
-               
+            //Append event data to table
 
-                
 
-                var eventDate = $("<p>").text(eventData.datetime);
-            var eventVenue = $("<p>").text(eventData.venue.name);
-            var eventCity = $("<p>").text(eventData.venue.city + ",");
-            var eventReg = $("<p>").text(eventData.venue.region);
+            console.log(eventData.datetime);
+
+            var eventDate = eventData.datetime
+            var eventVenue = eventData.venue.name
+            var eventCity = eventData.venue.city
+            var eventReg = eventData.venue.region;
             var eventLongit = $("<p>").text("Longitude: " + eventData.venue.longitude);
             var eventLat = $("<p>").text("latitude: " + eventData.venue.latitude);
-            var ticketURL = $("<p>").text(eventData.offers[0].url);
+            var ticketURL = eventData.offers[0].url;
 
             var mapBut = $("<button class='mapBut'>");
             mapBut.text("Map");
             mapBut.addClass("data-long");
             mapBut.addClass("data-lat");
-            mapBut.attr("data-Long", eventData.venue.longitude );
+            mapBut.attr("data-Long", eventData.venue.longitude);
             mapBut.attr("data-lat", eventData.venue.latitude);
-
-
-
 
             // var ticketBut = $("<button>");
             // $(ticketBut).text("Tickets");
@@ -114,44 +111,56 @@ function showArtistEvents(artist) {
             // ticketBut.addClass("ticketLink");
             // ticketBut.onclick("location.href", "eventData.offers[0].url" );
 
-            // $("#artist-div").append(newDate, eventVenue, eventCity, eventReg, ticketBut)
 
-            // $('table').find('tbody').append([
-            //     '<tr>',
-            //         '<td>'+newDate+'</td>',
-            //         '<td>'+eventVenue+'</td>',
-            //         '<td>'+eventCity+" "+eventReg+'</td>',
-            //         '<td>'+ticketURL+'</td>',
-            //         '<td>'+mapBut+'</td>',
-            //     '</tr>'
-                
-            //     ]);
+            $('table').find('tbody').append(
+                `<tr>
+                    <td class="dateCol">${newDate}</td>
+                    <td class="venueCol">${eventVenue}</td>
+                    <td class="locCol">${eventCity},${eventReg}</td>
+                    <td class="urlCol"><button class='ticketBut'><a href=${ticketURL}>TicketLink</a></button></td>
+                    <td class="mapIt"><button class='mapBut' data-long=${eventData.venue.longitude} data-lat= ${eventData.venue.latitude}>Map Location</button>                
+                </tr>`
+            )
 
-                console.log(newDate,eventVenue,eventCity,eventReg,ticketURL,mapBut)
 
-            $('table').find('tbody').append([
-                '<tr>',
-                        '<td class= "dateCol">'+newDate+'</td>',
-                        '<td class = "venueCol">'+$(".venueCol").append(eventVenue)+'</td>',
-                        '<td class = "cityCol">'+$(".cityCol").append(eventCity)+ ", "+$(".cityCol").append(eventReg)+'</td>',
-                        '<td class = "urlCol">'+$(".urlCol").append(ticketURL)+'</td>',
-                        '<td class = "butCol">'+$(".butCol").append(mapBut)+'</td>',
-                '</tr>'
-            ]);
-
-            
         })
     })
 }
 
 
 
+
+
+// Event handler for user clicking the select-artist button
+$(document).on("click", "#search-button", function (event) {
+    // Preventing the button from trying to submit the form
+    event.preventDefault();
+
+
+    // Storing the artist name
+    var inputArtist = $("#search-box").val().trim();
+
+    console.log(inputArtist);
+    // $('#search-box').val('');
+    $("#artist-div").empty();
+    $("td").empty();
+
+
+
+    // Running the searchBandsInTown function (passing in the artist as an argument)
+    searchBandsInTown(inputArtist);
+    showArtistEvents(inputArtist);
+
+
+});
+
+
 function initMap(lat, lng) {
-    console.log( lat, lng );
-    lat = lat || 33.759247
-    lng = lng || -84.387722
+    // console.log(lat, lng);
+    lat = 33.759247
+    lng = -84.387722
     var uluru = { lat, lng };
-    var map = new google.maps.Map(document.getElementById('map-div'), {
+    map = new google.maps.Map(document.getElementById('map-div'), {
         zoom: 16,
         center: uluru
     });
@@ -162,57 +171,35 @@ function initMap(lat, lng) {
 
 }
 
+function mapSetCenter() {
+    if (map !== undefined && typeof map === "object") {
+        map.setCenter(geolocation);
 
-
-
-// Event handler for user clicking the select-artist button
-$(document).on("click", "#search-button", function(event) {
-    // Preventing the button from trying to submit the form
-    event.preventDefault();
-   
-
-    // Storing the artist name
-    var inputArtist = $("#search-box").val().trim();
-
-
-    
-    // $('html,body').animate({
-    //     scrollTop: $("#artist-table").offset().top
-    // }, 2000 );
-
-    // $( document.body ).animate({
-    //     scrollTop: 500
-    //   });
-
-
-    
-
-    console.log(inputArtist);
-    // $('#search-box').val('');
-    $("#artist-div").empty();
-    $("td").empty();
-   
-
-   
-    // Running the searchBandsInTown function (passing in the artist as an argument)
-    searchBandsInTown(inputArtist);
-    showArtistEvents(inputArtist); 
-   
-    
-});
-
+    } else {
+        mapSetCenter();
+    }
+}
 
 $("body").on("click", ".mapBut", function (e) {
-    var latit = parseFloat( $(this).attr("data-long") );
-    var longit = parseFloat( $(this).attr("data-lat") );
-
-    initMap(latit, longit);
+    //google.maps.event.trigger(MapInstance,'resize');
+    var latit = parseFloat($(this).attr("data-long"));
+    var long = parseFloat($(this).attr("data-lat"));
+    geolocation = {
+        lat: latit,
+        lng: long
+    };
+    console.log(geolocation);
+    mapSetCenter();
+    //initMap(latit, longit);
 })
 
 
 
-
-
 //End document ready function
-// });
+//});
 
+
+
+    
+
+            // $("#artist-div").append(newDate, eventVenue, eventCity, eventReg, ticketBut
