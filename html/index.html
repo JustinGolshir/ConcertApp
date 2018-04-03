@@ -8,7 +8,7 @@
   <title>Concert Connection</title>
   <meta name="description" content="Material design landing page template built by TemplateFlip.com" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
@@ -80,21 +80,21 @@
   </header>
 
 
-  <div id=“artist-table-div”>
+  <div id="artist-table-div">
 
-    <table id=“artist-table”>
-      <tr id=“artist-name”></tr>
-      <thead id=“table-head”>
-        <tr id=“table-row”></tr>
-        <th class=“table-header-item”>Date </th>
-        <th class=“table-header-item”>Venue </th>
-        <th class=“table-header-item”>Location </th>
-        <th class=“table-header-item”>Tickets </th>
-        <th class=“table-header-item”> Show on Map!</th>
+    <table id="artist-table">
+      <tr id="artist-name"></tr>
+      <thead id="table-head">
+        <tr id="table-row"></tr>
+        <th class="table-header-item">Date </th>
+        <th class="table-header-item">Venue </th>
+        <th class="table-header-item">Location </th>
+        <th class="table-header-item">Tickets </th>
+        <th class="table-header-item">Show on Map!</th>
         </tr>
       </thead>
 
-      <!-- <tbody id=“table-body”>
+      <!-- <tbody id="table-body">
          
         </tbody> -->
     </table>
@@ -105,8 +105,6 @@
 
   <div class="col-md-4" id="map-div">
   </div>
-
-
 
 
 
@@ -131,8 +129,7 @@
             <div class="h4">Nicole West</div>
             <h6 class="font-bold blue-grey-text mb-4">Lead Designer</h6>
             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
-            <a href="https://twitter.com"
-              target="_blank">
+            <a href="https://twitter.com" target="_blank">
               <i class="fa fa-twitter"></i>
               <span class="ml-1">@nicolewest</span>
             </a>
@@ -146,8 +143,7 @@
             <div class="h4">Hannah Cruz</div>
             <h6 class="font-bold blue-grey-text mb-4">Photographer</h6>
             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
-            <a href="https://twitter.com"
-              target="_blank">
+            <a href="https://twitter.com" target="_blank">
               <i class="fa fa-twitter"></i>
               <span class="ml-1">@hannahcruz</span>
             </a>
@@ -163,8 +159,7 @@
             <div class="h4">Mark Hall</div>
             <h6 class="font-bold blue-grey-text mb-4">Web Developer</h6>
             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
-            <a href="https://twitter.com"
-              target="_blank">
+            <a href="https://twitter.com" target="_blank">
               <i class="fa fa-twitter"></i>
               <span class="ml-1">@markhall</span>
             </a>
@@ -178,8 +173,7 @@
             <div class="h4">Vincent Harris</div>
             <h6 class="font-bold blue-grey-text mb-4">Web Developer</h6>
             <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
-            <a href="https://twitter.com"
-              target="_blank">
+            <a href="https://twitter.com" target="_blank">
               <i class="fa fa-twitter"></i>
               <span class="ml-1">@vincentharris</span>
             </a>
@@ -293,8 +287,12 @@
 
 
 
+  <!-- Google Maps API Script Tag -->
+  <script type="text/javascript" src="../our-javascript/app.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL1pWue1-8N5rlNWW2anG7vEvNgHg2UNc&callback=initMap"></script>
 
 
+  <!-- <script src="assets/javascript/app.js"></script> -->
 
   <!--Link to Moment.js should go here -->
 
@@ -302,8 +300,7 @@
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/mdb.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL1pWue1-8N5rlNWW2anG7vEvNgHg2UNc&callback=initMap "></script>
-  <script type="text/javascript" src="../our-javascript/app.js"></script>
+  <!-- <script src="assets/javascript/app.js"></script> -->
   <script>new WOW().init();</script>
 </body>
 
