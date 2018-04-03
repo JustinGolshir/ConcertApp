@@ -1,5 +1,5 @@
 #intro {
-  background: url("../img/audience-band-concert-167636.jpg") no-repeat center center;
+  background: url("../Materialize/img/audience-band-concert-167636.jpg") no-repeat center center;
   background-size: cover;
 }
 
@@ -137,6 +137,7 @@ img {
 
 #event-amount {
   text-align: center;
+  padding-top: 75px;
 }
 
 /* .main-container {
