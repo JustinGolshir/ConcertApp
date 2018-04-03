@@ -99,19 +99,16 @@
 }
 
 #artist-table {
- /* width: 100%; */
+ width: 100%;
  text-align: left;
  /* justify-content: space-around; */
 
 }
-table, td, body {
- margin: 10px 15px 10px 15px;
- line-height: 2.0;
-}
+
 
 #table-row {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
@@ -134,6 +131,25 @@ img {
   background: black !important;
 }
 
-.full-height header {
+/* .full-height header {
   height: 25px;
+} */
+
+#event-amount {
+  text-align: center;
+}
+
+/* .main-container {
+margin: 25px 0 25px 0;
+
+} */
+
+#map-div {
+  width: 80%;
+  border: 50px solid white;
+  height: 500px;
+}
+
+#about-header {
+  height: 100px;
 }

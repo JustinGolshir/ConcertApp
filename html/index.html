@@ -8,7 +8,7 @@
   <title>Concert Connection</title>
   <meta name="description" content="Material design landing page template built by TemplateFlip.com" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
@@ -36,18 +36,18 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link active" href="#intro">Home</a>
-            </li><li class="nav-item">
-              <a class="nav-link active" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link active" id="about" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
         </div>
       </div>
     </nav>
     <!-- Jumbotron section-->
-    <div class="jumbotron">
- <section class="view hm-gradient" id="intro">
+    <section class="view hm-gradient" id="intro">
       <div class="full-bg-img d-flex align-items-center">
         <div class="container">
           <div class="row no-gutters">
@@ -57,16 +57,16 @@
                   <div class="wow fadeInLeft" data-wow-delay="0.3s">
                     <h1 class="h1-responsive font-bold mt-sm-5">Welcome to Concert Connection</h1>
                     <div class="h6" style="margin-bottom: 150px">
-                      One stop shop for all your concert-going needs.
+                      one stop shop for finding your next concert
                     </div>
                   </div>
                   <div class="input-field">
                     <form>
-                    <input id="search-box" type="search" required>
-                    <button id="search-button" type="submit">  
-                      <i class="material-icons">search</i>
-                    </button>
-                  </form>
+                      <input id="search-box" type="search" required>
+                      <button id="search-button" type="submit">
+                        <i class="material-icons">search</i>
+                      </button>
+                    </form>
                   </div>
                   <div class="h6">
                   </div>
@@ -77,41 +77,39 @@
         </div>
       </div>
     </section>
-    </div>
-   
   </header>
 
-  
-  <div id=“artist-table-div”>
-      
-    <table id=“artist-table”>
-        <tr id=“artist-name”></tr>
-        <thead id=“table-head”>
-           <tr id=“table-row”></tr>
-              <th class=“table-header-item”>Date</th>
-              <th class=“table-header-item”>Venue</th>
-              <th class=“table-header-item”>Location</th>
-              <th class=“table-header-item”>Tickets</th>
-              <th class=“table-header-item”>Map It!</th>
-           </tr>
-        </thead>
-        
-        <!-- <tbody id=“table-body”>
-         
-        </tbody> -->
-     </table>
-</div>
+  <div>
+    <p>
+      <h2 id="event-amount"></h2>
+    </p>
+  </div>
+  <div class="container" id="main-container">
+    <div class="row">
+      <div class="col-md-7">
+        <div id="artist-table-div" style="width: 100%">
+          <table id="artist-table" class="table">
+            <thead id="table-head">
+              <tr id="table-row">
+                <th class="table-header-item">Date</th>
+                <th class="table-header-item">Venue</th>
+                <th class="table-header-item">Location</th>
+                <th class="table-header-item">Buy Tickets</th>
+                <th class="table-header-item">Directions</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-5" id="map-div">
+      </div>
+    </div>
+  </div>
 
-<div class="col-md-12" id="artist-div">
-</div>
-
-<div class="col-md-4" id="map-div">
-</div>
-
-<!-- footer --> 
-
-  <footer id="footer-div" style="background-color: black;" class="page-footer black darken-2 center-on-small-only pt-0 mt-0">
-    <div  class="container">
+  <footer class="page-footer black darken-2 center-on-small-only pt-0 mt-0">
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="mb-5 flex-center">
@@ -131,22 +129,15 @@
         </div>
       </div>
     </div>
-<div class="footer-copyright">
+    <div class="footer-copyright">
       <div class="container-fluid">
         <p>&copy;
-          <a href="/">ConcertConnect est. 2018</a>
+          <a href="/">ConccertConnect</a> est 2018
         </p>
       </div>
     </div>
-  </footer> 
-
-
-
-
-
-
-  <!--Link to Moment.js should go here --> 
-
+  </footer>
+  <!--Link to Moment.js should go here -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script type="text/javascript" src="js/popper.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
