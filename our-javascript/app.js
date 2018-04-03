@@ -22,6 +22,26 @@ $(document).ready(function () {
     var geolocation;
     var map, marker;
 
+    // Event handler for user clicking the select-artist button
+    $(document).on("click", "#search-button", function (event) {
+        // Preventing the button from trying to submit the form
+        event.preventDefault();
+
+        // Storing the artist name
+        var inputArtist = $("#search-box").val().trim();
+
+        //console.log(inputArtist);
+        // $('#search-box').val('');
+        $("#artist-div").empty();
+        $("td").empty();
+
+        // Running the searchBandsInTown function (passing in the artist as an argument)
+        searchBandsInTown(inputArtist);
+        showArtistEvents(inputArtist);
+
+
+    });
+
 
     //Function to seach BandsinTown API
     function searchBandsInTown(artist) {
@@ -62,25 +82,6 @@ $(document).ready(function () {
     });
 
 
-    // Event handler for user clicking the select-artist button
-    $(document).on("click", "#search-button", function (event) {
-        // Preventing the button from trying to submit the form
-        event.preventDefault();
-
-        // Storing the artist name
-        var inputArtist = $("#search-box").val().trim();
-
-        //console.log(inputArtist);
-        // $('#search-box').val('');
-        $("#artist-div").empty();
-        $("td").empty();
-
-        // Running the searchBandsInTown function (passing in the artist as an argument)
-        searchBandsInTown(inputArtist);
-        showArtistEvents(inputArtist);
-
-
-    });
 
 
 
@@ -144,7 +145,7 @@ $(document).ready(function () {
         var long = parseFloat($(this).attr("data-long"));
 
 
-        console.log( "lat (%d) and long (%d)", latit, long )
+        console.log("lat (%d) and long (%d)", latit, long)
         initMap(latit, long);
         console.log("LAT LONG SHOULD CHANGE")
     });
@@ -161,7 +162,7 @@ function initMap(lati, long) {
     let lat = lati || 33.759247;
     let lng = long || -84.387722;
     var pos = { lat, lng };
-    console.log( pos )
+    console.log(pos)
     map = new google.maps.Map(document.getElementById('map-div'), {
         zoom: 16,
         center: pos

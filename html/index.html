@@ -8,7 +8,9 @@
   <title>Concert Connection</title>
   <meta name="description" content="Material design landing page template built by TemplateFlip.com" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/mdb.min.css" rel="stylesheet">
@@ -36,12 +38,13 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link active" href="#intro">Home</a>
+
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#team">About</a>
+              <a class="nav-link active" id="about" href="about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
         </div>
       </div>
@@ -57,7 +60,7 @@
                   <div class="wow fadeInLeft" data-wow-delay="0.3s">
                     <h1 class="h1-responsive font-bold mt-sm-5">Welcome to Concert Connection</h1>
                     <div class="h6" style="margin-bottom: 150px">
-                      One stop shop for all your concert-going needs.
+                      one stop shop for finding your next concert
                     </div>
                   </div>
                   <div class="input-field">
@@ -78,7 +81,6 @@
       </div>
     </section>
   </header>
-
 
   <div id="artist-table-div">
 
@@ -105,9 +107,6 @@
 
   <div class="col-md-4" id="map-div">
   </div>
-
-
-
 
 
 
@@ -255,36 +254,37 @@
   </section>
   </div> -->
   <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="mb-5 flex-center">
-            <a class="px-3">
-              <i class="fa fa-facebook fa-lg white-text"></i>
-            </a>
-            <a class="px-3">
-              <i class="fa fa-twitter fa-lg white-text"></i>
-            </a>
-            <a class="px-3">
-              <i class="fa fa-google-plus fa-lg white-text"></i>
-            </a>
-            <a class="px-3">
-              <i class="fa fa-linkedin fa-lg white-text"></i>
-            </a>
-          </div>
+
+  <div>
+    <p>
+      <h2 id="event-amount"></h2>
+    </p>
+  </div>
+  <div class="container" id="main-container">
+    <div class="row">
+      <div class="col-md-7">
+        <div id="artist-table-div" style="width: 100%">
+          <table id="artist-table" class="table">
+            <thead id="table-head">
+              <tr id="table-row">
+                <th class="table-header-item">Date</th>
+                <th class="table-header-item">Venue</th>
+                <th class="table-header-item">Location</th>
+                <th class="table-header-item">Buy Tickets</th>
+                <th class="table-header-item">Directions</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
         </div>
       </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container-fluid">
-        <p>&copy;
-          <a href="/">Material Landing</a> - Design:
-          <a href="https://templateflip.com/" target="_blank">TemplateFlip</a>
-        </p>
+      <div class="col-md-5" id="map-div">
       </div>
     </div>
-  </footer>
+  </div>
 
+  <footer class="page-footer black darken-2 center-on-small-only pt-0 mt-0">
 
 
   <!-- Google Maps API Script Tag -->
@@ -293,6 +293,8 @@
 
 
   <!-- <script src="assets/javascript/app.js"></script> -->
+
+  <!--Link to Moment.js should go here -->
 
   <!--Link to Moment.js should go here -->
 
