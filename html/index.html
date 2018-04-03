@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="full-height" lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Concert Connection</title>
+  <meta name="description" content="Material design landing page template built by TemplateFlip.com" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <link href="styles/main.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/locale/af.js"></script> -->
+
+
+</head>
+
+<body id="top">
+  <header>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-ticket"></i>
+          <strong>ConcertConnection</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#intro">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" id="about" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+    <!-- Jumbotron section-->
+    <section class="view hm-gradient" id="intro">
+      <div class="full-bg-img d-flex align-items-center">
+        <div class="container">
+          <div class="row no-gutters">
+            <div class="col-md-10 col-lg-12 text-center">
+              <div>
+                <div class="white-text">
+                  <div class="wow fadeInLeft" data-wow-delay="0.3s">
+                    <h1 class="h1-responsive font-bold mt-sm-5">Welcome to Concert Connection</h1>
+                    <div class="h6" style="margin-bottom: 150px">
+                      one stop shop for finding your next concert
+                    </div>
+                  </div>
+                  <div class="input-field">
+                    <form>
+                      <input id="search-box" type="search" required>
+                      <button id="search-button" type="submit">
+                        <i class="material-icons">search</i>
+                      </button>
+                    </form>
+                  </div>
+                  <div class="h6">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <div>
+    <p>
+      <h2 id="event-amount"></h2>
+    </p>
+  </div>
+  <div class="container" id="main-container">
+    <div class="row">
+      <div class="col-md-7">
+        <div id="artist-table-div" style="width: 100%">
+          <table id="artist-table" class="table">
+            <thead id="table-head">
+              <tr id="table-row">
+                <th class="table-header-item">Date</th>
+                <th class="table-header-item">Venue</th>
+                <th class="table-header-item">Location</th>
+                <th class="table-header-item">Buy Tickets</th>
+                <th class="table-header-item">Directions</th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-5" id="map-div">
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer black darken-2 center-on-small-only pt-0 mt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mb-5 flex-center">
+            <a class="px-3">
+              <i class="fa fa-facebook fa-lg white-text"></i>
+            </a>
+            <a class="px-3">
+              <i class="fa fa-twitter fa-lg white-text"></i>
+            </a>
+            <a class="px-3">
+              <i class="fa fa-google-plus fa-lg white-text"></i>
+            </a>
+            <a class="px-3">
+              <i class="fa fa-linkedin fa-lg white-text"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container-fluid">
+        <p>&copy;
+          <a href="/">ConccertConnect</a> est 2018
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!--Link to Moment.js should go here -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL1pWue1-8N5rlNWW2anG7vEvNgHg2UNc&callback=initMap"></script>
+  <script type="text/javascript" src="../our-javascript/app.js"></script>
+  <script>new WOW().init();</script>
+</body>
+
+</html>

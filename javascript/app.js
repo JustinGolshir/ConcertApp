@@ -42,7 +42,7 @@ $("#select-artist").on("click", function (event) {
 
 function showArtistEvents(artist) {
     // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
-    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?limit=20&app_id=codingbootcamp";
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?limit=5&app_id=codingbootcamp";
     $.ajax({
         url: queryURL,
         method: "GET"
