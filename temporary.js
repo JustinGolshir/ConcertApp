@@ -117,12 +117,12 @@ $(document).ready(function () {
                     <td class="dateCol">${newDate}</td>
                     <td class="venueCol">${eventVenue}</td>
                     <td class="locCol">${eventCity},${eventReg}</td>
-                    <td class="urlCol"><button class='ticketBut'><a href="${ticketURL}">TicketLink</a></button></td>
+                    <td class="urlCol"><button class="ticketBut"><a href="${ticketURL}">TicketLink</a></button></td>
                     <td class ="mapButCol"><button class="mapBut" data-lat="${eventLat}" data-long="${eventLng}">Map It!</button>
                 </tr>`
 
                 )
-                //console.log(ticketURL)
+                console.log("Ticket URL:" + ticketURL)
             }
         })
     }

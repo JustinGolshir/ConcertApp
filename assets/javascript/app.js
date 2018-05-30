@@ -113,9 +113,9 @@ $(document).ready(function () {
                 var eventLat = eventData.venue.latitude;
                 var eventLng = eventData.venue.longitude;
                 var ticketURL = eventData.offers[0].url;
-                console.log(eventData.offers[0].url);
-                console.log(eventLat)
-                console.log(eventLng)
+                // console.log(eventData.offers[0].url);
+                // console.log(eventLat)
+                // console.log(eventLng)
                 var mapUrl = "https://www.google.com/maps/search/?api=1&query=" + eventLat + "," + eventLng;
 
                 $('table').find('tbody').append(
@@ -123,7 +123,7 @@ $(document).ready(function () {
                     <td class="dateCol">${newDate}</td>
                     <td class="venueCol">${eventVenue}</td>
                     <td class="locCol">${eventCity},${eventReg}</td>
-                    <td class="urlCol"><button class='ticketBut btn-dark btn-sm'>Buy<a href="${ticketURL}"></a></button></td>
+                    <td class="urlCol"><a href="${ticketURL}" target="_blank"><button class='ticketBut btn-dark btn-sm'>Buy</button></a></td>
                     <td class ="mapButCol"><button class="mapBut btn-sm btn-dark" data-lat="${eventLat}" data-long="${eventLng}">Map It!</button>
                 </tr>`
 
@@ -131,6 +131,7 @@ $(document).ready(function () {
                 // <td class="mapItCol"><a class='mapBut' target="_blank" href=${mapUrl}><img class="mapThumb" src="../mapsImage.png" alt="mapImgThumb"></a>
 
                 // console.log(mapUrl);
+                console.log("ticketURL:" + ticketURL)
             }
         })
     }
