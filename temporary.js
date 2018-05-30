@@ -107,9 +107,9 @@ $(document).ready(function () {
                 var eventLat = eventData.venue.latitude;
                 var eventLng = eventData.venue.longitude;
                 var ticketURL = eventData.offers[0].url;
-                console.log(eventData.offers[0].url);
-                console.log(eventLat)
-                console.log(eventLng)
+                // console.log(eventData.offers[0].url);
+                // console.log(eventLat)
+                // console.log(eventLng)
                 var mapUrl = "https://www.google.com/maps/search/?api=1&query=" + eventLat + "," + eventLng;
 
                 $('table').find('tbody').append(
@@ -122,9 +122,7 @@ $(document).ready(function () {
                 </tr>`
 
                 )
-                // <td class="mapItCol"><a class='mapBut' target="_blank" href=${mapUrl}><img class="mapThumb" src="../mapsImage.png" alt="mapImgThumb"></a>
-
-                // console.log(mapUrl);
+                //console.log(ticketURL)
             }
         })
     }
