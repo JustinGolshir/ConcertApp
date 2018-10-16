@@ -3,3 +3,9 @@ ConcertApp is an AJAX/API based application that utilizes BandsInTown and Google
 
 # Getting Started 
 https://justingolshir.github.io/ConcertApp/
+
+# Authors
+Connor Scofield - Project Lead / Backend logic / API data Management
+Kristen Spekhals - Content Developer and Designer 
+Victor Hernandez - Lead UI Designer
+Justin Golshir - Product Design / Research
